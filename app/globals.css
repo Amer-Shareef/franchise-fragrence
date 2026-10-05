@@ -1,0 +1,392 @@
+@import "tailwindcss";
+
+/* ========================================
+   FRANCHISE FRAGRENCE
+   Global Design System
+======================================== */
+
+@theme inline {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", Arial, sans-serif;
+}
+
+/* ========================================
+   LUXURY COLOR PALETTE
+======================================== */
+
+:root {
+  --ivory: #f6f1e8;
+  --champagne: #eae1d2;
+  --emerald: #174d3d;
+  --forest: #0d352b;
+  --gold-muted: #b6a58a;
+  --charcoal: #242b27;
+  --sage: #6d756e;
+  --white: #ffffff;
+  --border: #dcd2c3;
+}
+
+/* ========================================
+   BASE STYLES
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--ivory);
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--charcoal);
+  font-family: "Inter", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--emerald);
+  color: var(--white);
+}
+
+/* ========================================
+   TYPOGRAPHY
+======================================== */
+
+.display {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+.eyebrow {
+  color: var(--emerald);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+p {
+  line-height: 1.75;
+}
+
+/* ========================================
+   LAYOUT
+======================================== */
+
+.page-shell {
+  width: min(100% - 2rem, 1280px);
+  margin-inline: auto;
+}
+
+.section-spacing {
+  padding-block: 5rem;
+}
+
+/* ========================================
+   SURFACES & CARDS
+======================================== */
+
+.surface {
+  background: var(--champagne);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+}
+
+.surface-white {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+}
+
+.line {
+  border-color: var(--border);
+}
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  border: 1px solid var(--emerald);
+  border-radius: 0.2rem;
+  padding: 0.85rem 1.25rem;
+  background: transparent;
+  color: var(--emerald);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.button:hover {
+  background: var(--emerald);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+.button-solid {
+  border-color: var(--emerald);
+  background: var(--emerald);
+  color: var(--white);
+}
+
+.button-solid:hover {
+  border-color: var(--forest);
+  background: var(--forest);
+  color: var(--white);
+}
+
+/* ========================================
+   IMAGE PLACEHOLDERS
+======================================== */
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #eae1d2 0%, #f6f1e8 55%, #d8cbb8 100%);
+  color: var(--sage);
+  border-radius: 0.25rem;
+}
+
+/* ========================================
+   PRODUCT CARDS
+======================================== */
+
+.product-card {
+  overflow: hidden;
+  border: 1px solid transparent;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.product-card:hover {
+  border-color: var(--border);
+  box-shadow: 0 12px 35px rgba(36, 43, 39, 0.08);
+  transform: translateY(-3px);
+}
+
+.product-art {
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.product-card:hover .product-art {
+  transform: scale(1.045);
+}
+
+/* ========================================
+   FORM ELEMENTS
+======================================== */
+
+input,
+select,
+textarea {
+  border: 1px solid var(--border);
+  border-radius: 0.2rem;
+  background: var(--white);
+  color: var(--charcoal);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--emerald);
+  outline: 2px solid rgba(23, 77, 61, 0.12);
+  outline-offset: 1px;
+}
+
+/* ========================================
+   SCROLLBAR
+======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-muted);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--emerald);
+}
+
+/* ========================================
+   ACCESSIBILITY & REDUCED MOTION
+======================================== */
+
+:focus-visible {
+  outline: 2px solid var(--emerald);
+  outline-offset: 3px;
+}
+
+/* ========================================
+   LOGO & NAVIGATION
+======================================== */
+
+.logo-script {
+  font-family: "Allura", "Snell Roundhand", "Segoe Script", cursive;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.nav-link:hover span {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================
+   RESPONSIVE SPACING
+======================================== */
+
+@media (min-width: 768px) {
+  .page-shell {
+    width: min(100% - 4rem, 1280px);
+  }
+
+  .section-spacing {
+    padding-block: 7rem;
+  }
+}
+
+/* ========================================
+   LOGO FONT
+======================================== */
+
+.logo-script {
+  font-family: var(--font-allura), cursive;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1.5px;
+  width: 0;
+  background: var(--emerald);
+  content: "";
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ========================================
+   MOBILE NAVIGATION
+======================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  #mobile-navigation {
+    animation: mobile-menu-enter 0.2s ease-out;
+  }
+}
+
+@keyframes mobile-menu-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   ADMIN FORMS
+======================================== */
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--charcoal);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.field {
+  min-height: 2.75rem;
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  color: var(--charcoal);
+  font-size: 0.875rem;
+}
+
+.field::placeholder {
+  color: #9a958b;
+}
